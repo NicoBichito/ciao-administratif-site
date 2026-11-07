@@ -144,7 +144,10 @@ nav.main a.link:hover { color: var(--sea); }
 .pain .stat { font-family: var(--font-display); font-weight: 800; font-size: 1.5rem; line-height: 1.1; color: var(--ink); padding-top: 12px; border-top: 1px solid var(--line); }
 .pain .caption { color: var(--muted); font-size: 0.95rem; }
 .pain sup, .sources sup { color: var(--sea); }
-.sources { margin-top: 24px; font-size: 0.8rem; color: var(--muted); display: grid; gap: 4px; }
+.sources { font-size: 0.8rem; color: var(--muted); display: grid; gap: 4px; }
+.sources-title { font-family: var(--font-mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; }
+footer.site .wrap.sources-wrap { display: block; padding-bottom: 24px; margin-bottom: 24px; border-bottom: 1px solid var(--line); }
+a.ref { text-decoration: none; }
 @media (max-width: 980px) { .pains { grid-template-columns: repeat(2, 1fr); gap: 16px; } }
 @media (max-width: 560px) { .pains { grid-template-columns: 1fr; } }
 
@@ -272,32 +275,26 @@ footer.site a { color: var(--muted); }
           <span class="time">10:30 · Au travail</span>
           <h3>Le téléphone sonne dans le vide</h3>
           <p class="stat">Plus de 3 clients sur 4</p>
-          <p class="caption">ont déjà renoncé à une entreprise après un appel sans réponse.<sup>1</sup></p>
+          <p class="caption">ont déjà renoncé à une entreprise après un appel sans réponse.<a class="ref" href="#sources"><sup>1</sup></a></p>
         </article>
         <article class="pain">
           <span class="time">14:00 · Entre 2 clients</span>
           <h3>Les devis restent sans réponse</h3>
           <p class="stat">À peine 1 devis sur 4</p>
-          <p class="caption">envoyé par un artisan du bâtiment est signé.<sup>2</sup></p>
+          <p class="caption">envoyé par un artisan du bâtiment est signé.<a class="ref" href="#sources"><sup>2</sup></a></p>
         </article>
         <article class="pain">
           <span class="time">18:00 · Relevé de compte</span>
           <h3>Les paiements se font attendre</h3>
           <p class="stat">Près d'1 facture sur 3</p>
-          <p class="caption">des TPE n'est pas réglée à l'échéance.<sup>3</sup></p>
+          <p class="caption">des TPE n'est pas réglée à l'échéance.<a class="ref" href="#sources"><sup>3</sup></a></p>
         </article>
         <article class="pain">
           <span class="time">21:00 · À la maison</span>
           <h3>L'administratif déborde sur la soirée</h3>
           <p class="stat">Plus d'une journée par semaine</p>
-          <p class="caption">10 h en moyenne passées sur la gestion par les chefs d'entreprise artisanale.<sup>4</sup></p>
+          <p class="caption">10 h en moyenne passées sur la gestion par les chefs d'entreprise artisanale.<a class="ref" href="#sources"><sup>4</sup></a></p>
         </article>
-      </div>
-      <div class="sources">
-        <p><sup>1</sup> CallRail, <a href="https://www.callrail.com/blog/missed-calls-cost-businesses-more-than-ever" target="_blank" rel="noopener">Why businesses can't afford to miss calls</a>, septembre 2025 : sondage de 1 000 consommateurs aux États-Unis, 78 %.</p>
-        <p><sup>2</sup> Payflo, <a href="https://payflo.fr/blog/taux-conversion-devis-btp-benchmark/" target="_blank" rel="noopener">Taux de conversion devis BTP, benchmark 2026</a> : environ 25 % de devis signés sur plus de 15 000 devis d'artisans français.</p>
-        <p><sup>3</sup> Ellisphere, <a href="https://www.ellisphere.com/uploads/landing_pages/FocusEcoEllipro/etudes/comportement/2026/com/Etude%20ELLISPHERE%20-%20Comportements%20de%20paiement%20-%20Bilan%202025.pdf" target="_blank" rel="noopener">Comportements de paiement, bilan 2025</a> : 68 % des factures des TPE réglées à échéance.</p>
-        <p><sup>4</sup> Asterès pour le FAFCEA, <a href="https://asteres.fr/site/wp-content/uploads/2024/12/ASTERES-FAFCEA-Impact-de-lIA-06122024.pdf" target="_blank" rel="noopener">L'intelligence artificielle et les chefs d'entreprise artisanale</a>, octobre 2024.</p>
       </div>
     </div>
   </section>
@@ -474,6 +471,15 @@ footer.site a { color: var(--muted); }
 </main>
 
 <footer class="site">
+  <div class="wrap sources-wrap">
+      <div class="sources" id="sources">
+      <p class="sources-title">Sources</p>
+      <p><sup>1</sup> CallRail, <a href="https://www.callrail.com/blog/missed-calls-cost-businesses-more-than-ever" target="_blank" rel="noopener">Why businesses can't afford to miss calls</a>, septembre 2025 : sondage de 1 000 consommateurs aux États-Unis, 78 %.</p>
+      <p><sup>2</sup> Payflo, <a href="https://payflo.fr/blog/taux-conversion-devis-btp-benchmark/" target="_blank" rel="noopener">Taux de conversion devis BTP, benchmark 2026</a> : environ 25 % de devis signés sur plus de 15 000 devis d'artisans français.</p>
+      <p><sup>3</sup> Ellisphere, <a href="https://www.ellisphere.com/uploads/landing_pages/FocusEcoEllipro/etudes/comportement/2026/com/Etude%20ELLISPHERE%20-%20Comportements%20de%20paiement%20-%20Bilan%202025.pdf" target="_blank" rel="noopener">Comportements de paiement, bilan 2025</a> : 68 % des factures des TPE réglées à échéance.</p>
+      <p><sup>4</sup> Asterès pour le FAFCEA, <a href="https://asteres.fr/site/wp-content/uploads/2024/12/ASTERES-FAFCEA-Impact-de-lIA-06122024.pdf" target="_blank" rel="noopener">L'intelligence artificielle et les chefs d'entreprise artisanale</a>, octobre 2024.</p>
+    </div>
+  </div>
   <div class="wrap">
     <span>© 2026 Ciao Administratif · Assistance administrative pour les artisans</span>
     <a href="mentions-legales.html">Mentions légales</a>
