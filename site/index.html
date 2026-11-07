@@ -103,10 +103,10 @@ nav.main a.link:hover { color: var(--sea); }
 
 /* Héro */
 .hero { padding-block: clamp(40px, 7vw, 88px); }
-.hero .wrap { display: grid; grid-template-columns: minmax(0, 860px); gap: clamp(32px, 5vw, 64px); align-items: center; }
-.hero h1 { font-size: clamp(2.4rem, 6vw, 4.3rem); font-weight: 800; letter-spacing: -0.025em; }
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 1fr); gap: clamp(32px, 5vw, 64px); align-items: center; }
+.hero h1 { font-size: clamp(2.4rem, 5.4vw, 4.3rem); font-weight: 800; letter-spacing: -0.025em; }
 .hero h1 em { font-style: normal; background: linear-gradient(transparent 62%, color-mix(in srgb, var(--ochre) 55%, transparent) 62%); }
-.hero h1 .l { display: block; }
+.hero h1 .l { display: block; white-space: nowrap; }
 @media (max-width: 600px) {
   .hero h1 { text-align: center; font-size: 6.5vw; letter-spacing: -0.03em; }
   .hero h1 .l { white-space: nowrap; }
