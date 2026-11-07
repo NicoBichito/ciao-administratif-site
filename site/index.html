@@ -97,13 +97,19 @@ nav.main a.link:hover { color: var(--sea); }
 .btn-primary:hover { transform: translateY(-1px); }
 .btn-ghost { border-color: var(--line); color: var(--ink); background: transparent; }
 .btn-ghost:hover { border-color: var(--ink); }
-.btn-sm { padding: 9px 16px; font-size: 0.92rem; }
+.btn-sm { padding: 9px 16px; font-size: 0.92rem; white-space: nowrap; }
+@media (max-width: 420px) { .logo span { display: none; } }
 
 /* Héro */
 .hero { padding-block: clamp(40px, 7vw, 88px); }
 .hero .wrap { display: grid; grid-template-columns: minmax(0, 860px); gap: clamp(32px, 5vw, 64px); align-items: center; }
 .hero h1 { font-size: clamp(2.4rem, 6vw, 4.3rem); font-weight: 800; letter-spacing: -0.025em; }
 .hero h1 em { font-style: normal; background: linear-gradient(transparent 62%, color-mix(in srgb, var(--ochre) 55%, transparent) 62%); }
+.hero h1 .l { display: block; }
+@media (max-width: 600px) {
+  .hero h1 { text-align: center; font-size: 6.5vw; letter-spacing: -0.03em; }
+  .hero h1 .l { white-space: nowrap; }
+}
 .hero-copy { display: grid; gap: 22px; min-width: 0; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
 .hero-zone { font-family: var(--font-mono); font-size: 0.82rem; color: var(--muted); text-align: center; }
@@ -239,7 +245,7 @@ footer.site a { color: var(--muted); }
   <section class="hero">
     <div class="wrap">
       <div class="hero-copy">
-        <h1>Vous faites votre métier.<br> <em>On s'occupe du bureau.</em></h1>
+        <h1><span class="l">Vous faites votre métier.</span> <span class="l"><em>On s'occupe de l'administratif.</em></span></h1>
         <p class="lead">Une équipe administrative qui répond au téléphone et aux mails à votre place, prend vos rendez-vous, suit vos devis et vos factures, et vous tient au courant en un message. Vous restez concentré sur votre métier.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#contact">Demander une démo gratuite</a>
