@@ -98,7 +98,8 @@ nav.main a.link:hover { color: var(--sea); }
 .btn-ghost { border-color: var(--line); color: var(--ink); background: transparent; }
 .btn-ghost:hover { border-color: var(--ink); }
 .btn-sm { padding: 9px 16px; font-size: 0.92rem; white-space: nowrap; }
-@media (max-width: 420px) { .logo span { display: none; } }
+.btn .short { display: none; }
+@media (max-width: 420px) { .btn .full { display: none; } .btn .short { display: inline; } }
 
 /* Héro */
 .hero { padding-block: clamp(40px, 7vw, 88px); }
@@ -242,7 +243,7 @@ footer.site a { color: var(--muted); }
       <a class="link" href="#equipe">L'équipe</a>
       <a class="link" href="#comment">Comment ça marche</a>
       <a class="link" href="#questions">Questions</a>
-      <a class="btn btn-primary btn-sm" href="#contact">Demander une démo</a>
+      <a class="btn btn-primary btn-sm" href="#contact"><span class="full">Demander une démo</span><span class="short">Démo</span></a>
     </nav>
   </div>
 </header>
