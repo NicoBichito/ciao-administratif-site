@@ -78,10 +78,10 @@ header.site {
   backdrop-filter: blur(8px); border-bottom: 1px solid var(--line);
 }
 header.site .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 14px; }
-.logo { display: flex; align-items: baseline; gap: 8px; text-decoration: none; color: var(--ink); }
-.logo b { font-family: var(--font-display); font-weight: 800; font-size: 1.5rem; letter-spacing: -0.02em; }
-.logo b i { font-style: normal; color: var(--ochre); }
-.logo span { font-family: var(--font-mono); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); }
+.logo { display: flex; align-items: baseline; text-decoration: none; color: var(--ink); font-family: var(--font-display); font-size: 1.4rem; letter-spacing: -0.02em; white-space: nowrap; }
+.logo b { font-weight: 800; }
+.logo i { font-style: normal; font-weight: 800; color: var(--ochre); }
+.logo span { font-weight: 500; }
 nav.main { display: flex; align-items: center; gap: 22px; }
 nav.main a.link { color: var(--ink); text-decoration: none; font-size: 0.95rem; }
 nav.main a.link:hover { color: var(--sea); }
@@ -238,7 +238,7 @@ footer.site a { color: var(--muted); }
 
 <header class="site">
   <div class="wrap">
-    <a class="logo" href="#top" aria-label="Ciao Administratif, accueil"><b>Ciao<i>.</i></b><span>Administratif</span></a>
+    <a class="logo" href="#top" aria-label="Ciao Administratif, accueil"><b>Ciao</b><i>-</i><span>Administratif</span></a>
     <nav class="main" aria-label="Navigation principale">
       <a class="link" href="#equipe">L'équipe</a>
       <a class="link" href="#comment">Comment ça marche</a>
