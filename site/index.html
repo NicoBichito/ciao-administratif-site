@@ -134,15 +134,18 @@ nav.main a.link:hover { color: var(--sea); }
 .phone-caption { font-size: 0.82rem; color: var(--muted); text-align: center; }
 
 /* Problèmes */
-.pains { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0 28px; }
-.pain { padding-top: 24px; border-top: 2px solid var(--ink); display: grid; gap: 10px; align-content: start; min-width: 0; }
-.pain .time { font-family: var(--font-mono); font-size: 0.85rem; color: var(--sea); }
-.pain p { color: var(--muted); }
-.pain .stat { font-family: var(--font-display); font-weight: 800; font-size: 1.75rem; line-height: 1.05; color: var(--ink); }
-.pain .stat small { display: block; font-family: var(--font-body); font-weight: 400; font-size: 0.85rem; line-height: 1.4; color: var(--muted); margin-top: 6px; }
-.pain .stat sup, .sources sup { color: var(--sea); }
-.sources { margin-top: 28px; font-size: 0.8rem; color: var(--muted); display: grid; gap: 4px; }
-@media (max-width: 980px) { .pains { grid-template-columns: repeat(2, 1fr); gap: 32px 28px; } }
+.pains { display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: auto auto auto 1fr; gap: 0 16px; }
+.pain {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 22px;
+  display: grid; grid-row: span 4; grid-template-rows: subgrid; row-gap: 12px; align-content: start; min-width: 0;
+}
+.pain .time { font-family: var(--font-mono); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--sea); }
+.pain h3 { font-size: 1.15rem; }
+.pain .stat { font-family: var(--font-display); font-weight: 800; font-size: 1.5rem; line-height: 1.1; color: var(--ink); padding-top: 12px; border-top: 1px solid var(--line); }
+.pain .caption { color: var(--muted); font-size: 0.95rem; }
+.pain sup, .sources sup { color: var(--sea); }
+.sources { margin-top: 24px; font-size: 0.8rem; color: var(--muted); display: grid; gap: 4px; }
+@media (max-width: 980px) { .pains { grid-template-columns: repeat(2, 1fr); gap: 16px; } }
 @media (max-width: 560px) { .pains { grid-template-columns: 1fr; } }
 
 /* Équipe */
@@ -265,30 +268,30 @@ footer.site a { color: var(--muted); }
         <h2 id="pb-title">Une journée d'artisan, côté bureau</h2>
       </div>
       <div class="pains">
-        <div class="pain">
-          <span class="time">10:30 · au travail</span>
-          <h3>Le téléphone sonne, vous ne pouvez pas décrocher</h3>
-          <p class="stat">Plus de 3 clients sur 4<small>des clients ont déjà renoncé à une entreprise après un appel sans réponse<sup>1</sup></small></p>
-          <p>Le client tombe sur la messagerie et appelle le concurrent suivant sur la liste.</p>
-        </div>
-        <div class="pain">
-          <span class="time">14:00 · entre deux clients</span>
-          <h3>Les devis partent, les réponses ne reviennent pas</h3>
-          <p class="stat">À peine 1 devis sur 4<small>envoyé par un artisan du bâtiment est signé<sup>2</sup></small></p>
-          <p>Personne n'a le temps de relancer, et un devis oublié est un client perdu.</p>
-        </div>
-        <div class="pain">
-          <span class="time">18:00 · relevé de compte</span>
+        <article class="pain">
+          <span class="time">10:30 · Au travail</span>
+          <h3>Le téléphone sonne dans le vide</h3>
+          <p class="stat">Plus de 3 clients sur 4</p>
+          <p class="caption">ont déjà renoncé à une entreprise après un appel sans réponse.<sup>1</sup></p>
+        </article>
+        <article class="pain">
+          <span class="time">14:00 · Entre 2 clients</span>
+          <h3>Les devis restent sans réponse</h3>
+          <p class="stat">À peine 1 devis sur 4</p>
+          <p class="caption">envoyé par un artisan du bâtiment est signé.<sup>2</sup></p>
+        </article>
+        <article class="pain">
+          <span class="time">18:00 · Relevé de compte</span>
           <h3>Les paiements se font attendre</h3>
-          <p class="stat">Près d'1 facture sur 3<small>des TPE n'est pas réglée à l'échéance<sup>3</sup></small></p>
-          <p>Relancer un client qui doit de l'argent, c'est gênant et ça prend du temps.</p>
-        </div>
-        <div class="pain">
-          <span class="time">21:00 · à la maison</span>
-          <h3>L'administratif vous attend le soir</h3>
-          <p class="stat">Plus d'une journée par semaine<small>10 h en moyenne passées sur la gestion par les chefs d'entreprise artisanale<sup>4</sup></small></p>
-          <p>Autant d'heures prises sur votre métier ou sur votre temps en famille.</p>
-        </div>
+          <p class="stat">Près d'1 facture sur 3</p>
+          <p class="caption">des TPE n'est pas réglée à l'échéance.<sup>3</sup></p>
+        </article>
+        <article class="pain">
+          <span class="time">21:00 · À la maison</span>
+          <h3>L'administratif déborde sur la soirée</h3>
+          <p class="stat">Plus d'une journée par semaine</p>
+          <p class="caption">10 h en moyenne passées sur la gestion par les chefs d'entreprise artisanale.<sup>4</sup></p>
+        </article>
       </div>
       <div class="sources">
         <p><sup>1</sup> CallRail, <a href="https://www.callrail.com/blog/missed-calls-cost-businesses-more-than-ever" target="_blank" rel="noopener">Why businesses can't afford to miss calls</a>, septembre 2025 : sondage de 1 000 consommateurs aux États-Unis, 78 %.</p>
