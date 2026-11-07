@@ -128,15 +128,16 @@ nav.main a.link:hover { color: var(--sea); }
 .phone-caption { font-size: 0.82rem; color: var(--muted); text-align: center; }
 
 /* Problèmes */
-.pains { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 2px solid var(--ink); }
-.pain { padding: 28px 28px 8px 0; display: grid; gap: 10px; align-content: start; min-width: 0; }
-.pain + .pain { padding-left: 28px; border-left: 1px solid var(--line); }
+.pains { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0 28px; }
+.pain { padding-top: 24px; border-top: 2px solid var(--ink); display: grid; gap: 10px; align-content: start; min-width: 0; }
 .pain .time { font-family: var(--font-mono); font-size: 0.85rem; color: var(--sea); }
 .pain p { color: var(--muted); }
-@media (max-width: 820px) {
-  .pains { grid-template-columns: 1fr; }
-  .pain, .pain + .pain { padding: 22px 0; border-left: 0; border-bottom: 1px solid var(--line); }
-}
+.pain .stat { font-family: var(--font-display); font-weight: 800; font-size: 1.75rem; line-height: 1.05; color: var(--ink); }
+.pain .stat small { display: block; font-family: var(--font-body); font-weight: 400; font-size: 0.85rem; line-height: 1.4; color: var(--muted); margin-top: 6px; }
+.pain .stat sup, .sources sup { color: var(--sea); }
+.sources { margin-top: 28px; font-size: 0.8rem; color: var(--muted); display: grid; gap: 4px; }
+@media (max-width: 980px) { .pains { grid-template-columns: repeat(2, 1fr); gap: 32px 28px; } }
+@media (max-width: 560px) { .pains { grid-template-columns: 1fr; } }
 
 /* Équipe */
 .team-band { background: var(--band); color: var(--band-ink); }
@@ -274,7 +275,7 @@ footer.site a { color: var(--muted); }
       </div>
       <div class="pains">
         <div class="pain">
-          <span class="time">10:30 · les mains dans le travail</span>
+          <span class="time">10:30 · au travail</span>
           <h3>Le téléphone sonne, vous ne pouvez pas décrocher</h3>
           <p>Le client tombe sur la messagerie et appelle le concurrent suivant sur la liste.</p>
         </div>
@@ -284,10 +285,21 @@ footer.site a { color: var(--muted); }
           <p>Personne n'a le temps de relancer, et un devis oublié est un client perdu.</p>
         </div>
         <div class="pain">
+          <span class="time">18:00 · relevé de compte</span>
+          <h3>Les paiements se font attendre</h3>
+          <p class="stat">1 facture sur 3<small>des TPE n'est pas réglée à l'échéance<sup>1</sup></small></p>
+          <p>Relancer un client qui doit de l'argent, c'est gênant et ça prend du temps.</p>
+        </div>
+        <div class="pain">
           <span class="time">21:00 · à la maison</span>
           <h3>L'administratif vous attend le soir</h3>
-          <p>Mails, rappels, factures à suivre : des heures prises sur votre temps en famille.</p>
+          <p class="stat">10 h par semaine<small>passées en moyenne sur la gestion par les chefs d'entreprise artisanale<sup>2</sup></small></p>
+          <p>Autant d'heures prises sur votre métier ou sur votre temps en famille.</p>
         </div>
+      </div>
+      <div class="sources">
+        <p><sup>1</sup> Ellisphere, <a href="https://www.ellisphere.com/uploads/landing_pages/FocusEcoEllipro/etudes/comportement/2026/com/Etude%20ELLISPHERE%20-%20Comportements%20de%20paiement%20-%20Bilan%202025.pdf" target="_blank" rel="noopener">Comportements de paiement, bilan 2025</a> : 68 % des factures des TPE réglées à échéance.</p>
+        <p><sup>2</sup> Asterès pour le FAFCEA, <a href="https://asteres.fr/site/wp-content/uploads/2024/12/ASTERES-FAFCEA-Impact-de-lIA-06122024.pdf" target="_blank" rel="noopener">L'intelligence artificielle et les chefs d'entreprise artisanale</a>, octobre 2024.</p>
       </div>
     </div>
   </section>
