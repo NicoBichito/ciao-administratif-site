@@ -101,7 +101,7 @@ nav.main a.link:hover { color: var(--sea); }
 
 /* Héro */
 .hero { padding-block: clamp(40px, 7vw, 88px); }
-.hero .wrap { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: clamp(32px, 5vw, 64px); align-items: center; }
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 860px); gap: clamp(32px, 5vw, 64px); align-items: center; }
 .hero h1 { font-size: clamp(2.4rem, 6vw, 4.3rem); font-weight: 800; letter-spacing: -0.025em; }
 .hero h1 em { font-style: normal; background: linear-gradient(transparent 62%, color-mix(in srgb, var(--ochre) 55%, transparent) 62%); }
 .hero-copy { display: grid; gap: 22px; min-width: 0; }
@@ -166,7 +166,9 @@ nav.main a.link:hover { color: var(--sea); }
 .team-note { margin-top: 28px; color: var(--band-muted); font-size: 0.95rem; max-width: 70ch; }
 
 /* Étapes */
-.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; counter-reset: s; }
+.how { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(32px, 5vw, 64px); align-items: center; }
+@media (max-width: 860px) { .how { grid-template-columns: 1fr; } }
+.steps { display: grid; grid-template-columns: 1fr; gap: 28px; counter-reset: s; min-width: 0; }
 @media (max-width: 820px) { .steps { grid-template-columns: 1fr; gap: 24px; } }
 .step { display: grid; gap: 10px; align-content: start; min-width: 0; }
 .step::before {
@@ -246,24 +248,7 @@ footer.site a { color: var(--muted); }
         <p class="hero-zone">Partout en France · Rendez-vous sur place sur la Côte d'Azur</p>
       </div>
 
-      <div class="phone" aria-label="Exemple de résumé envoyé au patron">
-        <div class="phone-top"><span>Messages</span><span>mardi 10:14</span></div>
-        <div class="sms">
-          <span class="sms-from">Carole · appel de 09:52</span>
-          <dl>
-            <dt>Client</dt><dd>M. Rossi, Antibes</dd>
-            <dt>Demande</dt><dd>Bruit au freinage sur sa Clio</dd>
-            <dt>Urgence</dt><dd><span class="tag">À voir cette semaine</span></dd>
-            <dt>RDV</dt><dd>Jeudi 8h30 à l'atelier, accepté</dd>
-          </dl>
-        </div>
-        <div class="sms">
-          <span class="sms-from">Isabelle · mails de la matinée</span>
-          <p>3 demandes de devis notées, 1 facture fournisseur rangée, 4 pubs supprimées.</p>
-        </div>
-        <div class="reply">Parfait, merci !</div>
-        <p class="phone-caption">Exemple de résumé reçu par SMS</p>
-      </div>
+
     </div>
   </section>
 
@@ -376,18 +361,38 @@ footer.site a { color: var(--muted); }
         <p class="eyebrow">Comment ça marche</p>
         <h2 id="how-title">En place en une semaine, sans rien changer à vos habitudes</h2>
       </div>
+      <div class="how">
       <div class="steps">
-        <div class="step">
-          <h3>On se rencontre</h3>
-          <p>30 minutes en visio, ou dans votre atelier, boutique ou sur chantier si vous êtes sur la Côte d'Azur. On note vos horaires, vos tarifs, vos zones et ce qui compte comme une urgence pour vous.</p>
+          <div class="step">
+            <h3>On se rencontre</h3>
+            <p>30 minutes en visio, ou dans votre atelier, boutique ou sur chantier si vous êtes sur la Côte d'Azur. On note vos horaires, vos tarifs, vos zones et ce qui compte comme une urgence pour vous.</p>
+          </div>
+          <div class="step">
+            <h3>On installe tout</h3>
+            <p>Renvoi d'appel depuis votre numéro actuel, connexion à votre boîte mail et à votre agenda. Vous n'avez rien à configurer.</p>
+          </div>
+          <div class="step">
+            <h3>Vous recevez les résumés</h3>
+            <p>Un SMS ou un mail après chaque appel important, et un point chaque jour. On ajuste ensemble les premières semaines.</p>
+          </div>
         </div>
-        <div class="step">
-          <h3>On installe tout</h3>
-          <p>Renvoi d'appel depuis votre numéro actuel, connexion à votre boîte mail et à votre agenda. Vous n'avez rien à configurer.</p>
-        </div>
-        <div class="step">
-          <h3>Vous recevez les résumés</h3>
-          <p>Un SMS ou un mail après chaque appel important, et un point chaque jour. On ajuste ensemble les premières semaines.</p>
+        <div class="phone" aria-label="Exemple de résumé envoyé au patron">
+          <div class="phone-top"><span>Messages</span><span>mardi 10:14</span></div>
+          <div class="sms">
+            <span class="sms-from">Carole · appel de 09:52</span>
+            <dl>
+              <dt>Client</dt><dd>M. Rossi, Antibes</dd>
+              <dt>Demande</dt><dd>Bruit au freinage sur sa Clio</dd>
+              <dt>Urgence</dt><dd><span class="tag">À voir cette semaine</span></dd>
+              <dt>RDV</dt><dd>Jeudi 8h30 à l'atelier, accepté</dd>
+            </dl>
+          </div>
+          <div class="sms">
+            <span class="sms-from">Isabelle · mails de la matinée</span>
+            <p>3 demandes de devis notées, 1 facture fournisseur rangée, 4 pubs supprimées.</p>
+          </div>
+          <div class="reply">Parfait, merci !</div>
+          <p class="phone-caption">Exemple de résumé reçu par SMS</p>
         </div>
       </div>
     </div>
