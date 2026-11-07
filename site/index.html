@@ -441,7 +441,7 @@ footer.site a { color: var(--muted); }
       </div>
 
       <form class="card" name="contact" method="POST" id="contact-form">
-        <p class="hp"><label>Ne pas remplir <input name="_honey" id="f-hp" tabindex="-1" autocomplete="off"></label></p>
+        <p class="hp"><label>Ne pas remplir <input name="botcheck" id="f-hp" tabindex="-1" autocomplete="off"></label></p>
         <div class="row2">
           <label for="f-nom">Prénom NOM<input id="f-nom" name="nom" required autocomplete="name" placeholder="Marc GIORDANO"></label>
           <label for="f-metier">Métier
@@ -493,10 +493,11 @@ footer.site a { color: var(--muted); }
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     var data = Object.fromEntries(new FormData(form));
-    if (data._honey) return;
-    data._subject = 'Nouvelle demande de rappel : ' + (data.nom || '');
-    data._template = 'table';
-    data._captcha = 'false';
+    if (data.botcheck) return;
+    delete data.botcheck;
+    data.access_key = 'd908351b-06a2-4ee6-bc3a-c4af1a6cbebf';
+    data.subject = 'Nouvelle demande de rappel : ' + (data.nom || '');
+    data.from_name = 'Site Ciao-Administratif';
     var done = function (ok) {
       msg.hidden = false;
       msg.className = ok ? 'form-msg' : 'form-msg err';
@@ -505,13 +506,13 @@ footer.site a { color: var(--muted); }
         : "L'envoi n'a pas fonctionné. Écrivez-nous à contact@ciao-administratif.fr, on vous répond vite.";
       if (ok) form.reset();
     };
-    fetch('https://formsubmit.co/ajax/contact@ciao-administratif.fr', {
+    fetch('https://api.web3forms.com/submit', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
       body: JSON.stringify(data)
     })
       .then(function (r) { return r.json(); })
-      .then(function (j) { done(j && String(j.success) === 'true'); })
+      .then(function (j) { done(j && j.success === true); })
       .catch(function () { done(false); });
   });
 })();
