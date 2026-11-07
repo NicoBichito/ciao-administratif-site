@@ -440,9 +440,8 @@ footer.site a { color: var(--muted); }
         <p>Par mail :<br><span class="contact-line">contact@ciao-administratif.fr</span></p>
       </div>
 
-      <form class="card" name="contact" method="POST" data-netlify="true" netlify-honeypot="site-web" id="contact-form">
-        <input type="hidden" name="form-name" value="contact">
-        <p class="hp"><label>Ne pas remplir <input name="site-web" id="f-hp" tabindex="-1" autocomplete="off"></label></p>
+      <form class="card" name="contact" method="POST" id="contact-form">
+        <p class="hp"><label>Ne pas remplir <input name="_honey" id="f-hp" tabindex="-1" autocomplete="off"></label></p>
         <div class="row2">
           <label for="f-nom">Prénom NOM<input id="f-nom" name="nom" required autocomplete="name" placeholder="Marc GIORDANO"></label>
           <label for="f-metier">Métier
@@ -493,7 +492,11 @@ footer.site a { color: var(--muted); }
   var msg = document.getElementById('form-msg');
   form.addEventListener('submit', function (e) {
     e.preventDefault();
-    var body = new URLSearchParams(new FormData(form)).toString();
+    var data = Object.fromEntries(new FormData(form));
+    if (data._honey) return;
+    data._subject = 'Nouvelle demande de rappel : ' + (data.nom || '');
+    data._template = 'table';
+    data._captcha = 'false';
     var done = function (ok) {
       msg.hidden = false;
       msg.className = ok ? 'form-msg' : 'form-msg err';
@@ -502,8 +505,13 @@ footer.site a { color: var(--muted); }
         : "L'envoi n'a pas fonctionné. Écrivez-nous à contact@ciao-administratif.fr, on vous répond vite.";
       if (ok) form.reset();
     };
-    fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: body })
-      .then(function (r) { done(r.ok); })
+    fetch('https://formsubmit.co/ajax/contact@ciao-administratif.fr', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(data)
+    })
+      .then(function (r) { return r.json(); })
+      .then(function (j) { done(j && String(j.success) === 'true'); })
       .catch(function () { done(false); });
   });
 })();
