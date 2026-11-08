@@ -211,6 +211,9 @@ a.ref { text-decoration: none; }
 @media (max-width: 860px) { .contact .wrap { grid-template-columns: 1fr; } }
 .contact-info { display: grid; gap: 18px; min-width: 0; }
 .contact-line { font-family: var(--font-mono); font-size: 0.95rem; user-select: all; }
+.hero-call { text-align: center; margin: 0; }
+.hero-call a, a.contact-line { color: var(--sea); font-weight: 700; text-decoration: none; white-space: nowrap; }
+.hero-call a:hover, a.contact-line:hover { text-decoration: underline; }
 form.card {
   background: var(--surface); border: 1px solid var(--line); border-radius: 20px;
   padding: clamp(20px, 3vw, 32px); display: grid; gap: 16px; min-width: 0;
@@ -258,6 +261,7 @@ footer.site a { color: var(--muted); }
           <a class="btn btn-primary" href="#contact">Demander une démo gratuite</a>
           <a class="btn btn-ghost" href="#equipe">Rencontrer l'équipe</a>
         </div>
+        <p class="hero-call">Ou appelez Carole, notre standardiste : <a href="tel:+33939203411">09 39 20 34 11</a></p>
         <p class="hero-zone">Partout en France<br>Rendez-vous sur place sur la Côte d'Azur</p>
       </div>
 
@@ -437,6 +441,7 @@ footer.site a { color: var(--muted); }
         <p class="eyebrow">Contact</p>
         <h2 id="contact-title">On en parle autour d'un café ?</h2>
         <p class="lead">Laissez vos coordonnées : on vous rappelle sous 48 h pour une démonstration gratuite, en visio, par téléphone ou chez vous sur la Côte d'Azur.</p>
+        <p>Par téléphone, Carole vous répond pour une info, une démo ou un devis :<br><a class="contact-line" href="tel:+33939203411">09 39 20 34 11</a></p>
         <p>Par mail :<br><span class="contact-line">contact@ciao-administratif.fr</span></p>
       </div>
 
