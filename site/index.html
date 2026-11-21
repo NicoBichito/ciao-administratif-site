@@ -198,10 +198,9 @@ a.ref { text-decoration: none; }
 .keep svg { margin-top: 4px; }
 
 /* Tarifs */
-.prices { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; }
-.price { grid-column: span 2; background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 24px; display: grid; gap: 10px; align-content: start; min-width: 0; }
-.price.wide { grid-column: span 3; }
-.price.plus { border-color: var(--ochre); }
+.prices { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; align-items: start; }
+.price .desc { color: var(--muted); font-size: 0.95rem; }
+.price { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 24px; display: grid; gap: 10px; align-content: start; min-width: 0; }
 .price h3::first-letter { color: var(--ochre); }
 .price .role { font-family: var(--font-mono); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); }
 .price .amount { font-family: var(--font-display); font-weight: 800; font-size: 2.4rem; line-height: 1; letter-spacing: -0.02em; }
@@ -210,7 +209,10 @@ a.ref { text-decoration: none; }
 .price-terms { display: flex; flex-wrap: wrap; gap: 10px 28px; margin-top: 28px; font-size: 0.95rem; }
 .price-terms span { display: inline-flex; gap: 8px; align-items: baseline; }
 .price-terms span::before { content: "✓"; color: var(--sea); font-weight: 700; }
-@media (max-width: 860px) { .prices { grid-template-columns: 1fr 1fr; } .price, .price.wide { grid-column: span 1; } }
+.price .option { margin-top: 6px; padding: 14px 16px; border: 1px dashed var(--ochre); border-radius: 12px; display: grid; gap: 6px; }
+.price .option-title { font-weight: 700; font-size: 0.95rem; }
+.price .option-title b { color: var(--sea); white-space: nowrap; }
+@media (max-width: 980px) { .prices { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 560px) { .prices { grid-template-columns: 1fr; } }
 
 /* FAQ */
@@ -429,7 +431,7 @@ footer.site a { color: var(--muted); }
         <p class="lead">Un abonnement mensuel par assistante, sans engagement. Prix hors taxes.</p>
       </div>
       <div class="prices">
-        <article class="price wide">
+        <article class="price">
           <h3>Carole</h3>
           <span class="role">Standardiste · téléphone</span>
           <p class="amount">99 € <small>HT / mois</small></p>
@@ -437,30 +439,31 @@ footer.site a { color: var(--muted); }
             <li>200 minutes d'appels incluses</li>
             <li>0,30 € HT la minute au-delà</li>
           </ul>
-        </article>
-        <article class="price wide plus">
-          <h3>Carole Sérénité</h3>
-          <span class="role">Standardiste · gros volume</span>
-          <p class="amount">149 € <small>HT / mois</small></p>
-          <ul>
-            <li>500 minutes d'appels incluses</li>
-            <li>0,25 € HT la minute au-delà</li>
-          </ul>
+          <div class="option">
+            <p class="option-title">Option Sérénité <b>+50 € HT / mois</b></p>
+            <ul>
+              <li>500 minutes d'appels incluses</li>
+              <li>0,25 € HT la minute au-delà</li>
+            </ul>
+          </div>
         </article>
         <article class="price">
           <h3>Isabelle</h3>
           <span class="role">Secrétaire · mails</span>
           <p class="amount">99 € <small>HT / mois</small></p>
+          <p class="desc">Tri des mails, réponses courantes, rendez-vous et éléments de devis.</p>
         </article>
         <article class="price">
           <h3>Amandine</h3>
           <span class="role">Commerciale · devis</span>
           <p class="amount">99 € <small>HT / mois</small></p>
+          <p class="desc">Préparation des devis, envoi avec votre accord et relances.</p>
         </article>
         <article class="price">
           <h3>Olivia</h3>
           <span class="role">Trésorière · paiements</span>
           <p class="amount">99 € <small>HT / mois</small></p>
+          <p class="desc">Suivi des acomptes et des soldes, relances de paiement.</p>
         </article>
       </div>
       <p class="price-terms"><span>Premier mois à 1 € par assistante</span><span>Puis prélèvement SEPA automatique</span><span>Résiliable chaque mois</span><span>Mise en place offerte</span></p>
@@ -488,7 +491,7 @@ footer.site a { color: var(--muted); }
         </details>
         <details>
           <summary>Combien ça coûte ?</summary>
-          <p>99 € HT par mois et par assistante, ou 149 € HT pour Carole Sérénité si vous recevez beaucoup d'appels. Le premier mois est à 1 €, la mise en place est offerte et vous pouvez résilier chaque mois. Le détail est dans la section <a href="#tarifs">Tarifs</a>.</p>
+          <p>99 € HT par mois et par assistante, avec l'option Sérénité à 50 € de plus pour Carole si vous recevez beaucoup d'appels. Le premier mois est à 1 €, la mise en place est offerte et vous pouvez résilier chaque mois. Le détail est dans la section <a href="#tarifs">Tarifs</a>.</p>
         </details>
         <details>
           <summary>Que deviennent mes données et celles de mes clients ?</summary>
