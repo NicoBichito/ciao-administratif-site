@@ -206,6 +206,9 @@ a.ref { text-decoration: none; }
 .price .amount { font-family: var(--font-display); font-weight: 800; font-size: 2.4rem; line-height: 1; letter-spacing: -0.02em; }
 .price .amount small { font-family: var(--font-body); font-weight: 400; font-size: 0.9rem; color: var(--muted); letter-spacing: 0; }
 .price ul { margin: 0; padding-left: 18px; color: var(--muted); font-size: 0.95rem; display: grid; gap: 4px; }
+.promo { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin: -12px 0 24px; padding: 10px 18px 10px 10px; border-radius: 16px; background: color-mix(in srgb, var(--ochre) 18%, transparent); font-size: 1rem; }
+.promo b { font-family: var(--font-display); font-weight: 800; }
+.promo-tag { background: var(--ochre); color: var(--ochre-ink, #14213D); font-family: var(--font-mono); font-size: 0.74rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; padding: 5px 10px; border-radius: 999px; }
 .price-terms { display: flex; flex-wrap: wrap; gap: 10px 28px; margin-top: 28px; font-size: 0.95rem; }
 .price-terms span { display: inline-flex; gap: 8px; align-items: baseline; }
 .price-terms span::before { content: "✓"; color: var(--sea); font-weight: 700; }
@@ -430,6 +433,7 @@ footer.site a { color: var(--muted); }
         <h2 id="price-title">Choisissez les assistantes dont vous avez besoin</h2>
         <p class="lead">Un abonnement mensuel par assistante, sans engagement. Prix hors taxes.</p>
       </div>
+      <p class="promo"><span class="promo-tag">Offre de lancement</span><span>Le premier mois à <b>1 €</b> par assistante</span></p>
       <div class="prices">
         <article class="price">
           <h3>Carole</h3>
@@ -466,7 +470,7 @@ footer.site a { color: var(--muted); }
           <p class="desc">Suivi des acomptes et des soldes, relances de paiement.</p>
         </article>
       </div>
-      <p class="price-terms"><span>Premier mois à 1 € par assistante</span><span>Puis prélèvement SEPA automatique</span><span>Résiliable chaque mois</span><span>Mise en place offerte</span></p>
+      <p class="price-terms"><span>Prélèvement SEPA automatique</span><span>Résiliable chaque mois</span><span>Mise en place offerte</span></p>
     </div>
   </section>
 
@@ -491,7 +495,7 @@ footer.site a { color: var(--muted); }
         </details>
         <details>
           <summary>Combien ça coûte ?</summary>
-          <p>99 € HT par mois et par assistante, avec l'option Sérénité à 50 € de plus pour Carole si vous recevez beaucoup d'appels. Le premier mois est à 1 €, la mise en place est offerte et vous pouvez résilier chaque mois. Le détail est dans la section <a href="#tarifs">Tarifs</a>.</p>
+          <p>99 € HT par mois et par assistante, avec l'option Sérénité à 50 € de plus pour Carole si vous recevez beaucoup d'appels. Pendant l'offre de lancement, le premier mois est à 1 €. La mise en place est offerte et vous pouvez résilier chaque mois. Le détail est dans la section <a href="#tarifs">Tarifs</a>.</p>
         </details>
         <details>
           <summary>Que deviennent mes données et celles de mes clients ?</summary>
